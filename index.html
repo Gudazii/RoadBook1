@@ -11,15 +11,21 @@
       .file-open-notice strong { display: block; margin-bottom: 8px; font-size: 22px; }
       .file-open-notice code { padding: 2px 5px; background: #e9ece5; }
     </style>
-    <script type="module" crossorigin src="./assets/index-DKzG-6cH.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-jv0uIaxN.css">
+    <script type="module" crossorigin src="./assets/index-DKzG-6cH.js?v=20260729-2"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-jv0uIaxN.css?v=20260729-2">
   </head>
   <body>
     <div id="root">
       <div class="file-open-notice">
-        <strong>此页面需要通过本地服务运行</strong>
-        Vite 项目不能直接双击源文件预览。请双击项目中的 <code>启动路书.cmd</code>，或在终端运行 <code>npm run dev</code>。
+        <strong id="loading-title">正在加载上海旅行路书…</strong>
+        <span id="loading-detail">首次打开可能需要几秒钟，请稍候。</span>
       </div>
     </div>
+    <script>
+      if (window.location.protocol === 'file:') {
+        document.getElementById('loading-title').textContent = '此页面需要通过本地服务运行';
+        document.getElementById('loading-detail').innerHTML = '请双击项目中的 <code>启动路书.cmd</code>，或在终端运行 <code>npm run dev</code>。';
+      }
+    </script>
   </body>
 </html>
